@@ -1,0 +1,1031 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Elite v1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-09-29 03:14:44+0000\n"
+"Last-Translator: WooRockets Team <translate@woorockets.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:19
+#@ elite
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:23
+#@ elite
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: archive.php:29
+#, php-format
+#@ elite
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:32
+#, php-format
+#@ elite
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:35
+#, php-format
+#@ elite
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:35
+#@ elite
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:38
+#, php-format
+#@ elite
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:38
+#@ elite
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:41
+#@ elite
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:44
+#@ elite
+msgid "Images"
+msgstr ""
+
+#: archive.php:47
+#@ elite
+msgid "Videos"
+msgstr ""
+
+#: archive.php:50
+#@ elite
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:53
+#@ elite
+msgid "Audios"
+msgstr ""
+
+#: archive.php:56
+#@ elite
+msgid "Archives"
+msgstr ""
+
+#: comments.php:26
+#, php-format
+#@ elite
+msgctxt "comments title"
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:33
+#: comments.php:50
+#@ elite
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:34
+#: comments.php:51
+#@ elite
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:35
+#: comments.php:52
+#@ elite
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:61
+#@ elite
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:15
+#@ elite
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:21
+#, php-format
+#@ elite
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:25
+#@ elite
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: content-none.php:30
+#@ elite
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: content-page.php:22
+#: content-single.php:30
+#: content.php:70
+#@ elite
+msgid "Pages:"
+msgstr ""
+
+#: content-single.php:40
+#: inc/template-tags.php:78
+#@ elite
+msgid ", "
+msgstr ""
+
+#: content-single.php:45
+#, php-format
+#@ elite
+msgid "<i class=\"icon-tags\"></i>%1$s"
+msgstr ""
+
+#. translators: %s: Name of current post
+#: content.php:63
+#, php-format
+#@ elite
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: footer.php:18
+#@ elite
+msgid "Proudly powered by "
+msgstr ""
+
+#: footer.php:18
+#@ elite
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:18
+#: inc/customizer.php:432
+#@ elite
+msgid "WordPress"
+msgstr ""
+
+#: footer.php:20
+#, php-format
+#@ elite
+msgid "Designed By <b><a href=\"%2$s\">%1$s</a></b>."
+msgstr ""
+
+#: inc/customizer.php:165
+#@ elite
+msgid "Getting Started"
+msgstr ""
+
+#: inc/customizer.php:166
+#@ elite
+msgid "The best way to understand the template is to setup sample data on your website to make it look the same as template demo website. And when the sample data installed, it's about time to take a look at template documentation and start exploration."
+msgstr ""
+
+#: inc/customizer.php:177
+#@ elite
+msgid "Restore Original DataInstall Sample Data"
+msgstr ""
+
+#: inc/customizer.php:189
+#@ elite
+msgid "Read Documentation"
+msgstr ""
+
+#: inc/customizer.php:202
+#@ elite
+msgid "Site Title & Logo & Tagline"
+msgstr ""
+
+#: inc/customizer.php:203
+#@ elite
+msgid "Enter your website title or insert logo image. And type a short description for your website"
+msgstr ""
+
+#: inc/customizer.php:214
+#@ elite
+msgid "Logo Type"
+msgstr ""
+
+#: inc/customizer.php:219
+#@ elite
+msgid "Logo Text"
+msgstr ""
+
+#: inc/customizer.php:220
+#@ elite
+msgid "Logo Image"
+msgstr ""
+
+#: inc/customizer.php:229
+#@ elite
+msgid "Upload Logo"
+msgstr ""
+
+#: inc/customizer.php:243
+#@ elite
+msgid "Color Schemes"
+msgstr ""
+
+#: inc/customizer.php:244
+#@ elite
+msgid "Elite provides 6 major color variations for your taste. Each color variation covers not only the main background, but also color of drop-down menu, links, table's header and others"
+msgstr ""
+
+#: inc/customizer.php:259
+#@ elite
+msgid "Select Color"
+msgstr ""
+
+#: inc/customizer.php:262
+#@ elite
+msgid "Cyan"
+msgstr ""
+
+#: inc/customizer.php:263
+#@ elite
+msgid "Green"
+msgstr ""
+
+#: inc/customizer.php:264
+#@ elite
+msgid "Red"
+msgstr ""
+
+#: inc/customizer.php:265
+#@ elite
+msgid "Grey"
+msgstr ""
+
+#: inc/customizer.php:266
+#@ elite
+msgid "Orange"
+msgstr ""
+
+#: inc/customizer.php:267
+#@ elite
+msgid "Violet"
+msgstr ""
+
+#: inc/customizer.php:279
+#@ elite
+msgid "Page Layout"
+msgstr ""
+
+#: inc/customizer.php:280
+#@ elite
+msgid "Select page layout with sidebar display."
+msgstr ""
+
+#: inc/customizer.php:301
+#@ elite
+msgid "Select Page Layout"
+msgstr ""
+
+#: inc/customizer.php:304
+#@ elite
+msgid "Main"
+msgstr ""
+
+#: inc/customizer.php:305
+#@ elite
+msgid "Left - Main"
+msgstr ""
+
+#: inc/customizer.php:306
+#@ elite
+msgid "Main - Right"
+msgstr ""
+
+#: inc/customizer.php:307
+#@ elite
+msgid "Left - Main - Right"
+msgstr ""
+
+#: inc/customizer.php:308
+#@ elite
+msgid "Left - Right - Main"
+msgstr ""
+
+#: inc/customizer.php:309
+#@ elite
+msgid "Main - Left - Right"
+msgstr ""
+
+#: inc/customizer.php:317
+#@ elite
+msgid "Show Comments"
+msgstr ""
+
+#: inc/customizer.php:322
+#: inc/customizer.php:576
+#@ elite
+msgid "Yes"
+msgstr ""
+
+#: inc/customizer.php:323
+#: inc/customizer.php:577
+#@ elite
+msgid "No"
+msgstr ""
+
+#: inc/customizer.php:334
+#@ elite
+msgid "Socials Network"
+msgstr ""
+
+#: inc/customizer.php:335
+#@ elite
+msgid "Set the URLs for your social media profiles here to be used in the header. Adding in a link will make its respective icon show up without needing to do anything else."
+msgstr ""
+
+#: inc/customizer.php:387
+#@ elite
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer.php:396
+#@ elite
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer.php:405
+#@ elite
+msgid "Dribbble"
+msgstr ""
+
+#: inc/customizer.php:414
+#@ elite
+msgid "Google Plus"
+msgstr ""
+
+#: inc/customizer.php:423
+#@ elite
+msgid "Vimeo"
+msgstr ""
+
+#: inc/customizer.php:441
+#@ elite
+msgid "Pinterest"
+msgstr ""
+
+#: inc/customizer.php:450
+#@ elite
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/customizer.php:459
+#@ elite
+msgid "Yahoo"
+msgstr ""
+
+#: inc/customizer.php:468
+#@ elite
+msgid "Skype"
+msgstr ""
+
+#: inc/customizer.php:477
+#@ elite
+msgid "Stumbleupon"
+msgstr ""
+
+#: inc/customizer.php:486
+#@ elite
+msgid "Youtube"
+msgstr ""
+
+#: inc/customizer.php:495
+#@ elite
+msgid "Flickr"
+msgstr ""
+
+#: inc/customizer.php:504
+#@ elite
+msgid "RSS"
+msgstr ""
+
+#: inc/customizer.php:513
+#@ elite
+msgid "My Space"
+msgstr ""
+
+#: inc/customizer.php:526
+#@ elite
+msgid "Extras"
+msgstr ""
+
+#: inc/customizer.php:552
+#@ elite
+msgid "Upload Favicon"
+msgstr ""
+
+#: inc/customizer.php:562
+#@ elite
+msgid "Google Analytics ID"
+msgstr ""
+
+#: inc/customizer.php:571
+#@ elite
+msgid "Offline"
+msgstr ""
+
+#: inc/customizer.php:584
+#@ elite
+msgid "Your Away Message"
+msgstr ""
+
+#: inc/customizer.php:593
+#@ elite
+msgid "Countdown timer (Format: M D, Y)"
+msgstr ""
+
+#: inc/customizer.php:602
+#@ elite
+msgid "Code Before &lt;/head&gt;"
+msgstr ""
+
+#: inc/customizer.php:611
+#@ elite
+msgid "Code Before &lt;/body&gt;"
+msgstr ""
+
+#: inc/extras.php:72
+#, php-format
+#@ elite
+msgid "Page %s"
+msgstr ""
+
+#: inc/init.php:98
+#@ elite
+msgid "Main Menu"
+msgstr ""
+
+#: inc/init.php:99
+#@ elite
+msgid "Top Menu"
+msgstr ""
+
+#: inc/init.php:100
+#@ elite
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/init.php:120
+#: inc/layout.php:99
+#@ elite
+msgid "Primary Sidebar"
+msgstr ""
+
+#: inc/init.php:129
+#: inc/layout.php:128
+#@ elite
+msgid "Secondary Sidebar"
+msgstr ""
+
+#: inc/init.php:138
+#@ elite
+msgid "Bottom 1"
+msgstr ""
+
+#: inc/init.php:147
+#@ elite
+msgid "Bottom 2"
+msgstr ""
+
+#: inc/init.php:156
+#@ elite
+msgid "Bottom 3"
+msgstr ""
+
+#: inc/layout.php:103
+#, php-format
+#@ elite
+msgid "This is the Primary Sidebar Area. You can add content to this area by visiting your %1$s and adding new widgets to this area."
+msgstr ""
+
+#: inc/layout.php:104
+#: inc/layout.php:133
+#@ elite
+msgid "Widgets Panel"
+msgstr ""
+
+#: inc/layout.php:132
+#, php-format
+#@ elite
+msgid "This is the Secondary Sidebar Area. You can add content to this area by visiting your %1$s and adding new widgets to this area."
+msgstr ""
+
+#: inc/meta-box.php:43
+#@ elite
+msgid "Layout Options"
+msgstr ""
+
+#: inc/meta-box.php:72
+#@ elite
+msgid "Select a specific layout for this page"
+msgstr ""
+
+#: inc/meta-box.php:73
+#@ elite
+msgid "Default layout: <b>Global Layout On Customizer</b>"
+msgstr ""
+
+#: inc/meta-box.php:76
+#@ elite
+msgid "---- Global Layout ----"
+msgstr ""
+
+#: inc/meta-box.php:77
+#@ elite
+msgid "Full Width"
+msgstr ""
+
+#: inc/meta-box.php:78
+#@ elite
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/meta-box.php:79
+#@ elite
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/meta-box.php:80
+#@ elite
+msgid "Left - Main Content - Right"
+msgstr ""
+
+#: inc/meta-box.php:81
+#@ elite
+msgid "Left - Right - Main Content"
+msgstr ""
+
+#: inc/meta-box.php:82
+#@ elite
+msgid "Main Content - Left - Right"
+msgstr ""
+
+#: inc/sample-data-installer/confirm.php:16
+#, php-format
+#@ elite
+msgid "This installer will make your website looks the same as <a href=\"http://%1$s.woorockets.com/\" target=\"_blank\">%2$s live demo website</a>."
+msgstr ""
+
+#: inc/sample-data-installer/confirm.php:23
+#: inc/sample-data-installer/restore.php:17
+#@ elite
+msgid "Important information"
+msgstr ""
+
+#: inc/sample-data-installer/confirm.php:25
+#@ elite
+msgid "Installing sample data will delete all data on this website."
+msgstr ""
+
+#: inc/sample-data-installer/confirm.php:26
+#@ elite
+msgid "It is NOT recommended to install sample data on production website."
+msgstr ""
+
+#: inc/sample-data-installer/confirm.php:33
+#@ elite
+msgid "I agree that installing sample data will delete all content on this website"
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:13
+#: inc/sample-data-installer/restore.php:34
+#@ elite
+msgid "There are several stages involved in the process. Please be patient."
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:17
+#@ elite
+msgid "Download sample data package."
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:22
+#@ elite
+msgid "Upload sample data package."
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:29
+#@ elite
+msgid "Install sample data."
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:34
+#@ elite
+msgid "Download demo assets."
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:49
+#@ elite
+msgid "Please download sample data package manually"
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:50
+#@ elite
+msgid "Download File"
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:53
+#@ elite
+msgid "Select the downloaded sample data package to install"
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:56
+#@ elite
+msgid "Please select the downloaded sample data package."
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:65
+#@ elite
+msgid "Sample data is successfully installed"
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:70
+#, php-format
+#@ elite
+msgid "Congratulations, your website now looks the same as <a href=\"http://%1$s.woorockets.com/\" target=\"_blank\">%2$s live demo website</a>."
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:79
+#@ elite
+msgid "Attention!"
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:82
+#@ elite
+msgid "Sample data for following plugins could NOT be installed:"
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:91
+#@ elite
+msgid "Sample data is not successfully installed"
+msgstr ""
+
+#: inc/sample-data-installer/confirmed.php:95
+#: inc/sample-data-installer/restore.php:82
+#@ elite
+msgid "Please fix any problem with your internet connection then try again."
+msgstr ""
+
+#: inc/sample-data-installer/download.php:27
+#@ elite
+msgid "Install required plugins."
+msgstr ""
+
+#: inc/sample-data-installer/download.php:29
+#@ elite
+msgid "For the best experience, it's strongly recommended for you to install following <strong>FREE</strong> plugins."
+msgstr ""
+
+#: inc/sample-data-installer/download.php:56
+#: inc/sample-data-installer/download.php:104
+#@ elite
+msgid "New Installation"
+msgstr ""
+
+#: inc/sample-data-installer/download.php:61
+#: inc/sample-data-installer/download.php:104
+#@ elite
+msgid "Update"
+msgstr ""
+
+#: inc/sample-data-installer/download.php:66
+#@ elite
+msgid "Installed"
+msgstr ""
+
+#: inc/sample-data-installer/download.php:87
+#@ elite
+msgid "Read more..."
+msgstr ""
+
+#: inc/sample-data-installer/import-data.php:24
+#@ elite
+msgid "Get it now"
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:14
+#@ elite
+msgid "This process will restore the original data of your website."
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:19
+#@ elite
+msgid "Restoring original data will delete all current data on this website."
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:20
+#@ elite
+msgid "Plugins and demo assets installed by sample data installation will be removed."
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:27
+#@ elite
+msgid "I agree that restoring original data will delete all current content on this website"
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:38
+#@ elite
+msgid "Restore original data."
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:43
+#@ elite
+msgid "Remove demo assets."
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:49
+#@ elite
+msgid "Delete installed plugins."
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:69
+#@ elite
+msgid "Original data is successfully restored"
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:72
+#@ elite
+msgid "Congratulations, your website now looks the same as before."
+msgstr ""
+
+#: inc/sample-data-installer/restore.php:78
+#@ elite
+msgid "Original data is not successfully restored"
+msgstr ""
+
+#: inc/sample-data-installer.php:119
+#: inc/sample-data-installer.php:126
+#@ elite
+msgid "Install Sample Data"
+msgstr ""
+
+#: inc/sample-data-installer.php:120
+#: inc/sample-data-installer.php:127
+#@ elite
+msgid "Restore Original Data"
+msgstr ""
+
+#: inc/sample-data-installer.php:128
+#@ elite
+msgid "Continue"
+msgstr ""
+
+#: inc/sample-data-installer.php:129
+#@ elite
+msgid "Finish"
+msgstr ""
+
+#: inc/sample-data-installer.php:131
+#@ elite
+msgid "Cancel"
+msgstr ""
+
+#: inc/sample-data-installer.php:280
+#, php-format
+#@ elite
+msgid "The theme version %1$s you are using is outdated. You need to update theme to the latest version %2$s before installing sample data."
+msgstr ""
+
+#: inc/sample-data-installer.php:345
+#: inc/sample-data-installer.php:354
+#@ elite
+msgid "File upload failed."
+msgstr ""
+
+#: inc/sample-data-installer.php:372
+#@ elite
+msgid "Missing parameter."
+msgstr ""
+
+#: inc/sample-data-installer.php:435
+#, php-format
+#@ elite
+msgid "Upgrade plugin failed: %s"
+msgstr ""
+
+#: inc/sample-data-installer.php:436
+#: inc/sample-data-installer.php:453
+#@ elite
+msgid "Unknown reason"
+msgstr ""
+
+#: inc/sample-data-installer.php:452
+#, php-format
+#@ elite
+msgid "Plugin installation failed: %s"
+msgstr ""
+
+#: inc/sample-data-installer.php:465
+#, php-format
+#@ elite
+msgid "Plugin activation failed: %s"
+msgstr ""
+
+#: inc/sample-data-installer.php:728
+#, php-format
+#@ elite
+msgid "Sample data import has encountered an error and cannot continue: %s"
+msgstr ""
+
+#: inc/sample-data-installer.php:806
+#: inc/sample-data-installer.php:821
+#@ elite
+msgid "Missing demo asset to download."
+msgstr ""
+
+#: inc/sample-data-installer.php:813
+#@ elite
+msgid "Missing list of demo assets to download."
+msgstr ""
+
+#: inc/sample-data-installer.php:829
+#@ elite
+msgid "Invalid demo asset URL."
+msgstr ""
+
+#: inc/sample-data-installer.php:910
+#, php-format
+#@ elite
+msgid "Fail to download %1$s due to following error: %2$s"
+msgstr ""
+
+#: inc/sample-data-installer.php:966
+#@ elite
+msgid "Not found any data backup file."
+msgstr ""
+
+#: inc/sample-data-installer.php:1023
+#@ elite
+msgid "Missing plugin to delete."
+msgstr ""
+
+#: inc/sample-data-installer.php:1073
+#, php-format
+#@ elite
+msgid "Unable to create directory %s for storing downloaded file"
+msgstr ""
+
+#: inc/sample-data-installer.php:1082
+#, php-format
+#@ elite
+msgid "Unable to save downloaded file to %s"
+msgstr ""
+
+#: inc/sample-data-installer.php:1174
+#, php-format
+#@ elite
+msgid "Unable to extract sample data package: %s"
+msgstr ""
+
+#: inc/sample-data-installer.php:1183
+#: inc/sample-data-installer.php:1221
+#, php-format
+#@ elite
+msgid "Invalid sample data package: %s"
+msgstr ""
+
+#: inc/sample-data-installer.php:1183
+#@ elite
+msgid "XML file not found"
+msgstr ""
+
+#: inc/sample-data-installer.php:1201
+#@ elite
+msgid "Unable to parse XML file for sample data declaration."
+msgstr ""
+
+#: inc/sample-data-installer.php:1222
+#@ elite
+msgid "Theme name in sample data package does not match the one installed"
+msgstr ""
+
+#: inc/template-tags.php:40
+#@ elite
+msgid "&laquo;"
+msgstr ""
+
+#: inc/template-tags.php:41
+#@ elite
+msgid "&raquo;"
+msgstr ""
+
+#: inc/template-tags.php:66
+#, php-format
+#@ elite
+msgctxt "post author"
+msgid "<i class=\"icon-user\"></i>%s"
+msgstr ""
+
+#: inc/template-tags.php:71
+#, php-format
+#@ elite
+msgctxt "post date"
+msgid "<i class=\"icon-calendar\"></i>%s"
+msgstr ""
+
+#: inc/template-tags.php:81
+#, php-format
+#@ elite
+msgid "<i class=\"icon-category\"></i>%1$s"
+msgstr ""
+
+#: inc/template-tags.php:88
+#@ elite
+msgid "0 Comment"
+msgstr ""
+
+#: inc/template-tags.php:88
+#@ elite
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:88
+#@ elite
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:110
+#@ elite
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:112
+#@ elite
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:127
+#@ elite
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:135
+#@ elite
+msgid "Post author"
+msgstr ""
+
+#: inc/template-tags.php:142
+#, php-format
+#@ elite
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:157
+#@ elite
+msgid "<span>Edit</span>"
+msgstr ""
+
+#: inc/template-tags.php:162
+#@ elite
+msgid "<span>Reply</span>"
+msgstr ""
+
+#: search.php:20
+#, php-format
+#@ elite
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:33
+#, php-format
+#@ elite
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
+msgstr ""
+
+#: single.php:34
+#, php-format
+#@ elite
+msgctxt "Next post link"
+msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
