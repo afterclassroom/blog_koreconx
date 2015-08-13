@@ -99,7 +99,7 @@ $wpe_ec_servers=array ( );
 $wpe_largefs=array ( );
 
 //$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'koreconx.dev', 'zone' => 'jxuge3rx5ugfte1r3baihg7t', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
-$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'koreconx.dev', 'zone' => '', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
+$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'koreconx.dev', 'zone' => 'jxuge3rx5ugfte1r3baihg7t', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
 
 $wpe_netdna_domains_secure=array ( );
 
