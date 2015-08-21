@@ -11,7 +11,7 @@
 		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 	</header><!-- .page-header -->
 
-	<div class="entry-content">
+	<div class="entry-content vkoreconx">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
