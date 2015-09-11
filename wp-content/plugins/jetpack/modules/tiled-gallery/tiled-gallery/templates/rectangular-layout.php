@@ -1,5 +1,4 @@
-<?php
-foreach ( $rows as $row ): ?>
+<?php foreach ( $rows as $row ): ?>
 	<div
 		class="gallery-row"
 		style="width: <?php echo esc_attr( $row->width ); ?>px; height: <?php echo esc_attr( $row->height ); ?>px;"

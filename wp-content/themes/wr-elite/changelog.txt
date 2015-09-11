@@ -1,0 +1,22 @@
+Elite Changelog
+---------------
+
+### 2015.08.10 - 1.6
+----------------------
+* Tweak: Remove installation sample data mechanism
+
+### 2015.03.02 - 1.2->1.5
+----------------------
+* Fix:   Problem with install sample data
+* Fix:   Menu links don't work on Blog Page
+* Fix:   Some minor bugs
+* Tweak: Optimize the landing page in back end
+
+### 2015.03.02 - 1.1
+----------------------
+* Fix:   Fix some minor bugs related to display
+* Tweak: Modify the fallback function to use for menu
+
+### 2014.02.14 - 1.0
+----------------------
+* Initial release

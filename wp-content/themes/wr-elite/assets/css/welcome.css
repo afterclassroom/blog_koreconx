@@ -1,0 +1,170 @@
+/**
+ * @version    1.6
+ * @package    Elite
+ * @author     WooRockets Team <support@woorockets.com>
+ * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Websites: http://www.woorockets.com
+ */
+
+.elite-welcome .feature-section.line {
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+	margin-bottom: 50px;
+	padding-bottom: 0;
+}
+.elite-welcome h2 {
+	font-size: 24px;
+	color: #444;
+	font-weight: 700;
+}
+.elite-welcome .notice-success {
+	border-left-color: #7ad03a;
+	width: 100%;
+}
+.elite-welcome .notice-success p {
+	margin: 0;
+	font-size: 13px;
+	color: #888;
+}
+.elite-welcome .notice-success > div {
+	width: 65%;
+}
+.elite-welcome .notice-success > span {
+	display: inline-block;
+	text-align: right;
+	width: 24%;
+	margin-top: 6px;
+}
+.elite-features fieldset {
+	border: 1px solid #dadbdc;
+	padding: 20px 20px 35px;
+	margin-bottom: 50px;
+}
+.elite-features fieldset h2 {
+	text-transform: uppercase;
+	padding: 10px 5px;
+}
+.elite-welcome .dashicons {
+	color: #222;
+	margin-right: 6px;
+}
+.elite-welcome .big-icon .dashicons {
+	font-size: 32px;
+}
+.elite-welcome .big-icon a {
+	text-decoration: none;
+}
+.products {
+	text-align: center;
+}
+.elite-welcome .head {
+	text-transform: uppercase;
+	position: relative;
+	margin: 0 0 25px 96px;
+	padding: 0;
+}
+.elite-welcome .head:after {
+	content: "***";
+	position: absolute;
+	display: block;
+	left: 0;
+	right: 0;
+	top: 45px;
+}
+.elite-welcome .products .three-col {
+	overflow: hidden;
+	padding-left: 96px;
+	margin-top: 70px;
+}
+.elite-welcome .products .three-col > div a {
+	width: 170px;
+	height: 107px;
+	border: 2px solid #dadbdc;
+	position: relative;
+	display: block;
+	-webkit-border-radius: 1px;
+	-moz-border-radius:    1px;
+	-ms-border-radius:     1px;
+	border-radius:         1px;
+}
+.elite-welcome .products .three-col > div img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.elite-welcome .footer {
+	text-align: center;
+}
+.elite-welcome .footer a {
+	color: #c7c7c7;
+	text-decoration: none;
+}
+.elite-welcome .footer a span {
+	display: block;
+	margin-top: 10px;
+}
+.elite-welcome .footer h4 {
+	color: #444;
+	line-height: 26px;
+}
+.elite-welcome .footer .button-primary {
+	height: 54px;
+	line-height: 50px;
+	color: #fff;
+	font-size: 24px;
+	padding: 0 50px;
+	margin-top: 20px;
+}
+#wpcontent .woorockets-welcome-message {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 10000;
+	color: #fff;
+	background: #0074a2;
+}
+#wpcontent .woorockets-welcome-message .woorockets-logo {
+	float: left;
+	background: #005d82;
+	border-right: 1px solid #0080b1;
+	width: 70px;
+	height: 70px;
+	position: relative;
+}
+#wpcontent .woorockets-welcome-message .woorockets-logo img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+#wpcontent .woorockets-welcome-message p {
+	padding: 25px 90px 0;
+	margin: 0;
+}
+#wpcontent .woorockets-welcome-message p a {
+	color: #fff;
+	text-decoration: underline;
+}
+#wpcontent .woorockets-welcome-message .dismiss {
+	color: #005171;
+	text-decoration: none;
+}
+#wpcontent .woorockets-welcome-message .dismiss:hover {
+	color: #003b52;
+}
+#wpcontent .woorockets-welcome-message .dismiss span {
+	bottom: 0;
+	font-size: 36px;
+	line-height: 18px;
+	margin: auto;
+	position: absolute;
+	right: 20px;
+	top: 0;
+}

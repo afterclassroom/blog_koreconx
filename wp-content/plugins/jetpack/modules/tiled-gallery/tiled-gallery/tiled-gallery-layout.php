@@ -1,4 +1,5 @@
 <?php
+
 abstract class Jetpack_Tiled_Gallery_Layout {
 	// Template whitelist
 	private static $templates = array( 'carousel-container', 'circle-layout', 'rectangular-layout', 'square-layout' );
@@ -77,4 +78,4 @@ abstract class Jetpack_Tiled_Gallery_Layout {
 		return $extra_data;
 	}
 }
-
+?>

@@ -1,4 +1,5 @@
 <?php
+
 abstract class Jetpack_Tiled_Gallery_Item {
 	public $image;
 
@@ -12,8 +13,8 @@ abstract class Jetpack_Tiled_Gallery_Item {
 		$this->link = $needs_attachment_link ? get_attachment_link( $this->image->ID ) : $this->orig_file;
 
 		$this->img_src = add_query_arg( array( 'w' => $this->image->width, 'h' => $this->image->height, 'crop' => true ), $this->orig_file );
-
-	}
+      
+   	}
 
 	public function fuzzy_image_meta() {
 		$meta = wp_get_attachment_metadata( $this->image->ID );
@@ -66,9 +67,10 @@ class Jetpack_Tiled_Gallery_Rectangular_Item extends Jetpack_Tiled_Gallery_Item 
 class Jetpack_Tiled_Gallery_Square_Item extends Jetpack_Tiled_Gallery_Item {
 	public function __construct( $attachment_image, $needs_attachment_link, $grayscale ) {
 		parent::__construct( $attachment_image, $needs_attachment_link, $grayscale );
-		$this->img_src_grayscale = jetpack_photon_url( $this->img_src, array( 'filter' => 'grayscale', 'resize' => array( $this->image->width, $this->image->height ) ) );
+		$this->img_src_grayscale = jetpack_photon_url( $this->img_src, array( 'filter' => 'grayscale', 'resize' => array( $this->image->width, $this->image->height ) ) ); 
 	}
 }
 
 class Jetpack_Tiled_Gallery_Circle_Item extends Jetpack_Tiled_Gallery_Square_Item {
 }
+?>

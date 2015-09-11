@@ -1,0 +1,431 @@
+/**
+ * @version    1.6
+ * @package    Elite
+ * @author     WooRockets Team <support@woorockets.com>
+ * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Websites: http://www.woorockets.com
+ */
+.jsn-bootstrap3 a:focus {
+	outline: 0;
+}
+.jsn-bootstrap3 .wr-element-container p {
+	color: #888;
+}
+.jsn-bootstrap3 .wr-element-button .btn {
+	border-radius: 0
+}
+.jsn-bootstrap3 .wr-element-button .btn i[class*="icon-"] {
+	margin-right: 20px;
+}
+.jsn-bootstrap3 .wr-element-table p {
+	margin-bottom: 0;
+}
+.wr-element-heading.light > * {
+	font-weight: 100 !important;
+}
+@media only screen and (max-width: 320px) {
+	.jsn-bootstrap3 .wr-element-table table {
+		font-size: 9px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.jsn-bootstrap3 .wr-element-audio > div {
+		width: 100% !important;
+	}
+}
+
+/*  [ Accordion ]
+- - - - - - - - - - - - - - - - - - - - */
+.jsn-bootstrap3 .wr-element-accordion .panel {
+	box-shadow: none;
+}
+.jsn-bootstrap3 .wr-element-accordion .panel-group .panel,
+.jsn-bootstrap3 .wr-element-accordion .panel-default > .panel-heading {
+	border-radius: 0;
+}
+.jsn-bootstrap3 .wr-element-accordion .panel-default {
+	border-color: #798aa4;
+}
+.jsn-bootstrap3 .wr-element-accordion .panel-default > .panel-heading {
+	border: 0;
+}
+.jsn-bootstrap3 .wr-element-accordion .panel-title a {
+	font-weight: 300;
+	text-transform: uppercase;
+	color: #fff;
+	padding: 15px;
+}
+.jsn-bootstrap3 .wr-element-accordion .panel-default > .panel-heading,
+.jsn-bootstrap3 .wr-element-accordion .panel-title a:hover {
+	background: #798aa4;
+}
+
+/*  [ Carousel ]
+- - - - - - - - - - - - - - - - - - - - */
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control {
+	background: rgba(0, 0, 0, .5);
+	width: 100px;
+	height: 120px;
+	opacity: 0;
+	line-height: 136px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control span {
+	cursor: pointer;
+	width: 22px;
+	height: 42px;
+	background-image: url('../img/icons/arrow.png');
+	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, 0);
+	position: initial;
+	margin: 0;
+	border: 0;
+	line-height: 0;
+	-webkit-transition: all .3s ease-in-out 0s;
+	-moz-transition:    all .3s ease-in-out 0s;
+	transition:         all .3s ease-in-out 0s;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control span[class*="icon-"]:before {
+	display: none;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control.right span {
+	background-position: -5px -72px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control span.icon-arrow-left {
+	top: 35px\9;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control span.icon-arrow-right {
+	top: 40px\9;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control.left span {
+	background-position: -5px -5px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel:hover .carousel-control {
+	opacity: 1;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .left.carousel-control {
+	left: -40px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel:hover .left.carousel-control {
+	left: 20px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .right.carousel-control {
+	right: -40px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel:hover .right.carousel-control {
+	right: 20px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-indicators {
+	bottom: -40px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-content {
+	padding: 0 100px;
+}
+.jsn-bootstrap3 .wr-element-carousel .carousel-inner {
+	text-align: center;
+	color: #fff;
+}
+.jsn-bootstrap3 .carousel .carousel-content h4 {
+	font-size: 60px;
+	text-transform: uppercase;
+}
+.jsn-bootstrap3 .carousel .carousel-content h4,
+.jsn-bootstrap3 .carousel .carousel-content p {
+	color: #fff;
+	margin: 0;
+}
+
+/*  [ List ]
+- - - - - - - - - - - - - - - - - - - - */
+.jsn-bootstrap3 .wr-element-list * {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition:    all .3s ease-in-out;
+	transition:         all .3s ease-in-out;
+}
+.jsn-bootstrap3 .wr-element-list .wr-list-icons.wr-shape-circle .wr-icon-base {
+	border-color: transparent;
+}
+.jsn-bootstrap3 .wr-element-list .wr-list-icons {
+	position: relative;
+}
+.jsn-bootstrap3 .wr-element-list.hover:hover .wr-list-icons .wr-icon-base {
+	background: #57a664 !important;
+}
+.jsn-bootstrap3 .wr-element-list.hover .wr-position-center.wr-list-icons:after {
+	position: absolute;
+	content: "";
+	background: #57a664;
+	width: 0;
+	height: 3px;
+	bottom: 0;
+	left: 50%;
+	-webkit-transition: all .4s ease-in-out;
+	-moz-transition:    all .4s ease-in-out;
+	transition:         all .4s ease-in-out;
+}
+.jsn-bootstrap3 .wr-element-list.hover:hover .wr-position-center.wr-list-icons:after {
+	width: 150px;
+	margin-left: -75px;
+}
+.jsn-bootstrap3 .wr-element-list .wr-position-center {
+	text-align: center;
+}
+.jsn-bootstrap3 .wr-element-list .wr-position-center .wr-icon-base {
+	margin: 0 auto 20px;
+}
+.jsn-bootstrap3  .wr-element-list .wr-list-content-wrap h4 {
+	margin-top: 0;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #888;
+	margin-bottom: 20px;
+}
+.jsn-bootstrap3 .wr-element-list.hover:hover .wr-list-content-wrap h4 {
+	color: #57a664;
+}
+.jsn-bootstrap3  .wr-element-list .wr-list-content-wrap p {
+	color: #b8b8b8;
+}
+.jsn-bootstrap3  .wr-element-list.hover:hover .wr-list-content-wrap p {
+	color: #3d4d59;
+}
+
+/*  [ Pricing Table ]
+- - - - - - - - - - - - - - - - - - - - */
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-header .wr-prtbl-meta {
+	min-height: 120px;
+}
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-header .wr-prtbl-price {
+	color: #58c5c0;
+}
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-header .wr-prtbl-title,
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-cols .wr-prtbl-footer .btn.btn-default,
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-cols.wr-prtbl-cols-featured .wr-prtbl-footer .btn.btn-default:hover {
+	background: #798aa4;
+}
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-cols-featured .wr-prtbl-header .wr-prtbl-title,
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-cols .wr-prtbl-footer .btn.btn-default:hover,
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-cols.wr-prtbl-cols-featured .wr-prtbl-footer .btn.btn-default {
+	background: #58c5c0;
+}
+.jsn-bootstrap3 .wr-element-pricing_table .wr-prtbl-cols .wr-prtbl-footer .btn.btn-default {
+	border: 0;
+	border-radius: 0;
+	color: #fff;
+}
+
+/*  [ Testimonial ]
+- - - - - - - - - - - - - - - - - - - - */
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-box,
+.jsn-bootstrap3 .wr-element-testimonial .carousel-indicators li {
+	background: none;
+	border: 0;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-box .arrow,
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-box .arrow:after,
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-box .arrow:before,
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-item .top > .arrow:after {
+	display: none;
+	border: 0;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-avatar img {
+	border-radius: 50%;
+}
+.jsn-bootstrap3 .wr-element-testimonial .carousel.wr-testimonial ol.carousel-indicators li.active {
+	background: #57a664;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial .wr-testimonial-content p {
+	color: #fff;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-meta .wr-testimonial-name {
+	text-transform: uppercase;
+	position: relative;
+	display: table;
+	margin: auto;
+	margin-top: 20px;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-meta > *,
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-meta a {
+	color: #b8b8b8;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-meta .wr-testimonial-name:before,
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-meta .wr-testimonial-name:after {
+	content: "-";
+	position: absolute;
+	color: #57a664;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-meta .wr-testimonial-name:before {
+	left: -10px;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial-meta .wr-testimonial-name:after {
+	right: -10px;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial .wr-arrow-left {
+	margin-left: 0;
+	left: auto;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial .wr-arrow-right {
+	margin-right: 0;
+	right: 0 !important;
+}
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial .wr-arrow-left,
+.jsn-bootstrap3 .wr-element-testimonial .wr-testimonial .wr-arrow-right {
+	top: 50%;
+	width: 40px;
+	height: 40px;
+	line-height: 34px;
+	border-radius: 0;
+	color: #fff;
+	background: #2b3740;
+	border: 0;
+	cursor: pointer;
+}
+.jsn-bootstrap3 .wr-element-testimonial .carousel-control:before {
+	font-size: 10px;
+}
+
+/*  [ Button ]
+- - - - - - - - - - - - - - - - - - - - */
+.jsn-bootstrap3 .wr-element-button .btn {
+	border: 0;
+	font-size: 16px;
+	font-family: 'Ubuntu', sans-serif;
+	box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .2);
+	-webkit-border-radius: 2px;
+	-moz-border-radius:    2px;
+	-ms-border-radius:     2px;
+	border-radius:         2px;
+}
+.jsn-bootstrap3 .wr-element-button .btn.btn-default {
+	background: #f2f2f2;
+}
+.jsn-bootstrap3 .wr-element-button.textshadow .btn.btn-default {
+	color: #b8b8b8;
+	text-shadow: 0 1px 0 #fff;
+}
+.jsn-bootstrap3 .wr-element-button .btn.btn-success {
+	background: #57a664;
+}
+.jsn-bootstrap3 .wr-element-button .btn.btn-success:hover {
+	background: #66b573;
+}
+.jsn-bootstrap3 .wr-element-button.textshadow .btn {
+	color: #327a3e;
+	font-weight: 500;
+	text-shadow: 0 1px 0 #75bd80;
+}
+.jsn-bootstrap3 .wr-element-button.textshadow .btn.btn-primary {
+	color: #07508d;
+	text-shadow: 0 1px 0 #74bdfc;
+}
+.jsn-bootstrap3 .wr-element-button.textshadow .btn.btn-info {
+	color: #187a98;
+	text-shadow: 0 1px 0 #80eeff;
+}
+.jsn-bootstrap3 .wr-element-button.textshadow .btn.btn-warning {
+	color: #b16e0f;
+	text-shadow: 0 1px 0 #ffd273;
+}
+.jsn-bootstrap3 .wr-element-button.textshadow .btn.btn-danger {
+	color: #a6201c;
+	text-shadow: 0 1px 0 #ff8783;
+}
+
+/*  [ Image ]
+- - - - - - - - - - - - - - - - - - - - */
+.wr-element-image.member {
+	position: relative;
+	overflow: hidden;
+}
+.wr-element-image.member:before {
+	background: rgba(255, 255, 255, .1);
+	content: "";
+	height: 600px;
+	position: absolute;
+	right: -600px;
+	top: -100px;
+	width: 600px;
+	-webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+	-moz-transition:    all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+	-ms-transition:     all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+	transition:         all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+	-webkit-border-radius: 50%;
+	-moz-border-radius:    50%;
+	-ms-border-radius:     50%;
+	border-radius:         50%;
+}
+.wr-element-image.member:hover:before {
+	right: -50%;
+	margin-right: -300px;
+}
+
+/*  [ Contact Form ]
+- - - - - - - - - - - - - - - - - - - - */
+.wr-contactform.jsn-master .jsn-bootstrap .jsn-form-content .control-group {
+	background: none !important;
+	border: 0 !important;
+}
+.wr-contactform.jsn-master .jsn-form-content .controls {
+	overflow: hidden;
+}
+.wr-contactform.jsn-master .jsn-bootstrap .jsn-form-content .control-group .controls input,
+.wr-contactform.jsn-master .jsn-bootstrap .jsn-form-content .control-group .controls select,
+.wr-contactform.jsn-master .jsn-bootstrap .jsn-form-content .control-group .controls textarea {
+	background: rgba(143, 164, 180, 0.2) !important;
+	border: 0 none !important;
+	border-radius: 0;
+	box-shadow: none !important;
+	color: #fff !important;
+	text-transform: uppercase;
+	font-family: 'Ubuntu', sans-serif;
+	padding: 10px;
+	width: 100%;
+	overflow: hidden;
+}
+.wr-contactform.jsn-master .jsn-bootstrap .jsn-form-content .control-group .controls input {
+	height: 32px;
+}
+.wr-contactform.jsn-master .jsn-bootstrap .jsn-row-container .btn-toolbar .btn {
+	background: #57a664;
+	box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .2);
+	color: #fff;
+	border: 0;
+	height: 48px;
+	padding: 0 40px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+	top: -103px;
+	right: -185px;
+	position: relative;
+	text-transform: uppercase;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition:    all .3s ease-in-out;
+	transition:         all .3s ease-in-out;
+	-webkit-border-radius: 2px;
+	-moz-border-radius:    2px;
+	-ms-border-radius:     2px;
+	border-radius:         2px;
+}
+.wr-contactform.jsn-master .jsn-bootstrap .jsn-row-container .btn-toolbar .btn:hover {
+	border: 0;
+	background: #327a3e;
+}
+@media only screen and (max-width: 480px), (max-device-width: 480px) {
+	.jsn-bootstrap3 .carousel .carousel-content h4 {
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control {
+		width: 20px;
+		height: 40px;
+	}
+	.jsn-bootstrap3 .wr-element-carousel .carousel .carousel-control span {
+		display: none;
+	}
+	.jsn-bootstrap .row-fluid [class*="span"] {
+		width: 100% !important;
+	}
+	.wr-contactform.jsn-master .jsn-bootstrap .jsn-row-container .btn-toolbar .btn {
+		position: inherit;
+	}
+}

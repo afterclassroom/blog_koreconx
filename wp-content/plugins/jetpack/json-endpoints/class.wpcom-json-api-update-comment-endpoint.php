@@ -63,7 +63,7 @@ class WPCOM_JSON_API_Update_Comment_Endpoint extends WPCOM_JSON_API_Comment_Endp
 			return $can_view;
 		}
 
-		$post_status = get_post_status_object( get_post_status( $post ) );
+		$post_status = get_post_status_object( $post->post_status );
 		if ( !$post_status->public && !$post_status->private ) {
 			return new WP_Error( 'unauthorized', 'Comments on drafts are not allowed', 403 );
 		}

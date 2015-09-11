@@ -61,7 +61,7 @@ class Jetpack_Subscriptions {
 		return $instance;
 	}
 
-	function __construct() {
+	function Jetpack_Subscriptions() {
 		$this->jetpack = Jetpack::init();
 
 		// Don't use COOKIEHASH as it could be shared across installs && is non-unique in multisite.
@@ -560,11 +560,11 @@ Jetpack_Subscriptions::init();
  */
 
 class Jetpack_Subscriptions_Widget extends WP_Widget {
-	function __construct() {
+	function Jetpack_Subscriptions_Widget() {
 		$widget_ops  = array( 'classname' => 'jetpack_subscription_widget', 'description' => __( 'Add an email signup form to allow people to subscribe to your blog.', 'jetpack' ) );
 		$control_ops = array( 'width' => 300 );
 
-		parent::__construct( 'blog_subscription', __( 'Blog Subscriptions (Jetpack)', 'jetpack' ), $widget_ops, $control_ops );
+		$this->WP_Widget( 'blog_subscription', __( 'Blog Subscriptions (Jetpack)', 'jetpack' ), $widget_ops, $control_ops );
 	}
 
 	function widget( $args, $instance ) {
@@ -589,10 +589,11 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 		$subscribe_placeholder 	= isset( $instance['subscribe_placeholder'] ) ? stripslashes( $instance['subscribe_placeholder'] ) : '';
 		$subscribe_button    	= isset( $instance['subscribe_button'] )      ? stripslashes( $instance['subscribe_button'] )      : '';
 		$success_message    	= isset( $instance['success_message'] )       ? stripslashes( $instance['success_message'] )      : '';
-		$widget_id              = esc_attr( !empty( $args['widget_id'] )      ? esc_attr( $args['widget_id'] ) : mt_rand( 450, 550 ) );
+		$subscribers_total      = $this->fetch_subscriber_count();
+		$widget_id              = esc_attr( !empty( $args['widget_id'] ) ? esc_attr( $args['widget_id'] ) : mt_rand( 450, 550 ) );
 
-		$show_subscribers_total = (bool) $instance['show_subscribers_total'];
-		$subscribers_total      = $this->fetch_subscriber_count(); // Only used for the shortcode [total-subscribers]
+		if ( ! is_array( $subscribers_total ) )
+			$show_subscribers_total = FALSE;
 
 		// Give the input element a unique ID
 		$subscribe_field_id = apply_filters( 'subscribe_field_id', 'subscribe-field', $widget_id );
@@ -603,10 +604,10 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 
 		// Display the subscription form
 		echo $args['before_widget'];
-
+		
 		// Only show the title if there actually is a title
 		if( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . esc_attr( $instance['title'] ) . $args['after_title'] . "\n";
+			echo $args['before_title'] . esc_attr( $instance['title'] ) . $args['after_title'] . "\n";	
 		}
 
 		$referer = set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
@@ -629,25 +630,22 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 			endswitch;
 		endif;
 
-		// Display a subscribe form
+		// Display a subscribe form 
 		if ( isset( $_GET['subscribe'] ) && 'success' == $_GET['subscribe'] ) { ?>
 			<?php
 		} else { ?>
 			<form action="#" method="post" accept-charset="utf-8" id="subscribe-blog-<?php echo $widget_id; ?>">
 				<?php
-				if ( ! isset ( $_GET['subscribe'] ) || 'success' != $_GET['subscribe'] ) {
+				if ( ! isset ( $_GET['subscribe'] ) ) {
 					?><div id="subscribe-text"><?php echo wpautop( str_replace( '[total-subscribers]', number_format_i18n( $subscribers_total['value'] ), $subscribe_text ) ); ?></div><?php
 				}
-
-				if ( $show_subscribers_total && 0 < $subscribers_total['value'] ) {
-					echo wpautop( sprintf( _n( 'Join %s other subscriber', 'Join %s other subscribers', $subscribers_total['value'], 'jetpack' ), number_format_i18n( $subscribers_total['value'] ) ) );
-				}
-				if ( ! isset ( $_GET['subscribe'] ) || 'success' != $_GET['subscribe'] ) { ?>
+				
+				if ( ! isset ( $_GET['subscribe'] ) ) { ?>
 					<p id="subscribe-email">
 						<label id="jetpack-subscribe-label" for="<?php echo esc_attr( $subscribe_field_id ); ?>">
 							<?php echo !empty( $subscribe_placeholder ) ? esc_html( $subscribe_placeholder ) : esc_html__( 'Email Address:', 'jetpack' ); ?>
 						</label>
-						<input type="email" name="email" required="required" class="required" value="<?php echo esc_attr( $subscribe_email ); ?>" id="<?php echo esc_attr( $subscribe_field_id ) . '-' . esc_attr( $widget_id ); ?>" placeholder="<?php echo esc_attr( $subscribe_placeholder ); ?>" />
+						<input type="email" name="email" value="<?php echo esc_attr( $subscribe_email ); ?>" id="<?php echo esc_attr( $subscribe_field_id ); ?>" placeholder="<?php echo esc_attr( $subscribe_placeholder ); ?>" />
 					</p>
 
 					<p id="subscribe-submit">
@@ -666,43 +664,18 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 			</form>
 
 			<script>
-			/*
-			Custom functionality for safari and IE
-			 */
-			(function( d ) {
-				// Creates placeholders for IE
-				if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
-					var label = d.getElementById( 'jetpack-subscribe-label' );
-						label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
-						label.style.position = 'absolute';
-						label.style.height   = '1px';
-						label.style.width    = '1px';
-						label.style.overflow = 'hidden';
-				}
-
-				// Make sure the email value is filled in before allowing submit
-				var form = d.getElementById('subscribe-blog-<?php echo $widget_id; ?>'),
-					input = d.getElementById('<?php echo esc_attr( $subscribe_field_id ) . '-' . esc_attr( $widget_id ); ?>'),
-					handler = function( event ) {
-						if ( '' === input.value ) {
-							input.focus();
-
-							if ( event.preventDefault ){
-								event.preventDefault();
-							}
-
-							return false;
-						}
-					};
-
-				if ( window.addEventListener ) {
-					form.addEventListener( 'submit', handler, false );
-				} else {
-					form.attachEvent( 'onsubmit', handler );
-				}
-			})( document );
+				( function( d ) {
+					if ( ( 'placeholder' in d.createElement( 'input' ) ) ) {
+						var label = d.getElementById( 'jetpack-subscribe-label' );
+	 					label.style.clip 	 = 'rect(1px, 1px, 1px, 1px)';
+	 					label.style.position = 'absolute';
+	 					label.style.height   = '1px';
+	 					label.style.width    = '1px';
+	 					label.style.overflow = 'hidden';
+					}
+				} ) ( document );
 			</script>
-		<?php } ?>
+		<?php } ?> 
 		<?php
 
 		echo "\n" . $args['after_widget'];
@@ -754,7 +727,6 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 		$instance['subscribe_placeholder']	= wp_kses( stripslashes( $new_instance['subscribe_placeholder'] ), array() );
 		$instance['subscribe_button']		= wp_kses( stripslashes( $new_instance['subscribe_button'] ), array() );
 		$instance['success_message']		= wp_kses( stripslashes( $new_instance['success_message'] ), array() );
-		$instance['show_subscribers_total']	= isset( $new_instance['show_subscribers_total'] ) && $new_instance['show_subscribers_total'];
 
 		return $instance;
 	}
@@ -766,7 +738,6 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 			'subscribe_placeholder'	 => esc_html__( 'Email Address', 'jetpack' ),
 			'subscribe_button'    	 => esc_html__( 'Subscribe', 'jetpack' ),
 			'success_message'    	 => esc_html__( 'Success! An email was just sent to confirm your subscription. Please find the email now and click activate to start subscribing', 'jetpack' ),
-			'show_subscribers_total' => true,
 		);
 	}
 
@@ -778,14 +749,6 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 		$subscribe_placeholder 	= stripslashes( $instance['subscribe_placeholder'] );
 		$subscribe_button    	= stripslashes( $instance['subscribe_button'] );
 		$success_message		= stripslashes( $instance['success_message']);
-		$show_subscribers_total = checked( $instance['show_subscribers_total'], true, false );
-
-		$subs_fetch = $this->fetch_subscriber_count();
-
-		if ( 'failed' == $subs_fetch['status'] ) {
-			printf( '<div class="error inline"><p>' . __( '%s: %s', 'jetpack' ) . '</p></div>', esc_html( $subs_fetch['code'] ), esc_html( $subs_fetch['message'] ) );
-		}
-		$subscribers_total = number_format_i18n( $subs_fetch['value'] );
 ?>
 <p>
 	<label for="<?php echo $this->get_field_id( 'title' ); ?>">
@@ -818,10 +781,7 @@ class Jetpack_Subscriptions_Widget extends WP_Widget {
 	</label>
 </p>
 <p>
-	<label for="<?php echo $this->get_field_id( 'show_subscribers_total' ); ?>">
-		<input type="checkbox" id="<?php echo $this->get_field_id( 'show_subscribers_total' ); ?>" name="<?php echo $this->get_field_name( 'show_subscribers_total' ); ?>" value="1"<?php echo $show_subscribers_total; ?> />
-		<?php echo esc_html( sprintf( _n( 'Show total number of subscribers? (%s subscriber)', 'Show total number of subscribers? (%s subscribers)', $subscribers_total, 'jetpack' ), $subscribers_total ) ); ?>
-	</label>
+	<small><?php esc_html_e( 'You can use the shortcode [total-subscribers] in both the text displayed to readers and the success message to show the number of subscribers to your site.', 'jetpack' ); ?></small>
 </p>
 <?php
 	}

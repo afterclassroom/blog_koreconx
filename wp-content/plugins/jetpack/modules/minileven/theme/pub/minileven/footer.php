@@ -14,14 +14,6 @@
 
 </div><!-- #wrapper -->
 
-<?php
-	/**
-	* Fires before the Mobile Theme's <footer> tag.
-	* @since 3.6
-	*/
-	do_action( 'jetpack_mobile_footer_before' );
-?>
-   
 <footer id="colophon" role="contentinfo">
 	<div id="site-generator">
 

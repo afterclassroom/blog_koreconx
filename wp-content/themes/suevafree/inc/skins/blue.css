@@ -1,0 +1,97 @@
+.pin-article .link:hover,
+.contact-form input[type=submit],
+.comment-form input[type=submit],
+.pin-article .quote:hover,
+.pin-article .link a:hover,
+.button,
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current,
+.wip-pagination span,
+.wip-pagination a span:hover,
+.skills .views.active,
+.skills .views:hover,
+.filter li:hover,
+.filter li.active {
+    background-color: #0090ff;
+}
+nav#mainmenu ul li a:hover,
+nav#mainmenu li:hover > a,
+nav#mainmenu ul li.current-menu-item > a,
+nav#mainmenu ul li.current_page_item > a,
+nav#mainmenu ul li.current-menu-parent > a,
+nav#mainmenu ul li.current_page_ancestor > a,
+nav#mainmenu ul li.current-menu-ancestor > a {
+    color: #0090ff;
+}
+::-moz-selection {
+    background-color: #0090ff;
+}
+::selection {
+    background-color: #0090ff;
+}
+nav#mainmenu ul ul {
+    border-top-color: #0090ff;
+}
+nav#mainmenu ul ul:before {
+    border-bottom-color: #0090ff;
+}
+nav#mainmenu ul ul li ul {
+    border-top-color: #0090ff;
+}
+nav#mainmenu ul ul li a:hover,
+nav#mainmenu ul ul li.current-menu-item > a,
+nav#mainmenu ul ul li.current_page_item > a,
+nav#mainmenu ul ul li.current_page_ancestor > a,
+nav#mainmenu ul ul li.current_page_ancestor > a,
+nav#mainmenu ul ul li.current-menu-ancestor > a,
+#sidebar .tagcloud a,
+#footer .tagcloud a {
+    background: #0090ff;
+}
+nav#mainmenu ul ul li a:hover,
+nav#mainmenu ul ul li.current-menu-item > a,
+nav#mainmenu ul ul li.current_page_item > a,
+nav#mainmenu ul ul li.current_page_ancestor > a,
+nav#mainmenu ul ul li.current_page_ancestor > a,
+nav#mainmenu ul ul li.current-menu-ancestor > a {
+    border-top-color: #0090ff;
+}
+.contact-form input[type=submit]:hover,
+.comment-form input[type=submit]:hover,
+.button:hover,
+#sidebar .tagcloud a:hover,
+#footer .tagcloud a:hover,
+.theme-default .nivo-directionNav a:hover,
+.flexslider:hover .flex-next:hover,
+.flexslider:hover .flex-prev:hover {
+    background-color: #0074cc;
+}
+a:hover,
+#footer a:hover,
+#footer ul.widget-category li:hover,
+#footer ul.widget-category li a:hover,
+.pin-article .title a:hover,
+#logo a:hover {
+    color: #0074cc;
+}
+#footer,
+#footer .widget,
+article blockquote {
+    border-color: #0090ff;
+}
+#footer .title,
+#footer p,
+#footer li,
+#footer address,
+#footer dd,
+#footer blockquote,
+#footer td,
+#footer th,
+#footer .textwidget,
+#footer a,
+#footer ul,
+#footer p,
+#footer .copyright p,
+#footer .copyright a {
+    color: #ffffff;
+}

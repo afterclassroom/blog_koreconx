@@ -26,15 +26,10 @@
 				args += '&relatedposts_exclude=' + $( '#jp-relatedposts' ).data( 'exclude' );
 			}
 
-			var pathname = locationObject.pathname;
-			if ( '/' !== pathname[0] ) {
-				pathname = '/' + pathname;
-			}
-
 			if ( '' === locationObject.search ) {
-				return pathname + '?' + args;
+				return locationObject.pathname + '?' + args;
 			} else {
-				return pathname + locationObject.search + '&' + args;
+				return locationObject.pathname + locationObject.search + '&' + args;
 			}
 		},
 
@@ -100,7 +95,7 @@
 					html += anchor_overlay[0] + anchor_overlay[1];
 				}
 				html += '<h4 class="jp-relatedposts-post-title">' + anchor[0] + post.title + anchor[1] + '</h4>';
-				html += '<p class="jp-relatedposts-post-excerpt">' + $( '<p>' ).text( post.excerpt ).html() + '</p>';
+				html += '<p class="jp-relatedposts-post-excerpt">' + post.excerpt + '</p>';
 				html += '<p class="jp-relatedposts-post-date">' + post.date + '</p>';
 				html += '<p class="jp-relatedposts-post-context">' + post.context + '</p>';
 				html += '</div>';
@@ -136,15 +131,10 @@
 			args += '&relatedposts_origin=' + $( anchor ).data( 'origin' );
 			args += '&relatedposts_position=' + $( anchor ).data( 'position' );
 
-			var pathname = anchor.pathname;
-			if ( '/' !== pathname[0] ) {
-				pathname = '/' + pathname;
-			}
-
 			if ( '' === anchor.search ) {
-				return pathname + '?' + args;
+				return anchor.pathname + '?' + args;
 			} else {
-				return pathname + anchor.search + '&' + args;
+				return anchor.pathname + anchor.search + '&' + args;
 			}
 		},
 

@@ -49,6 +49,7 @@ class Sharing_Service {
 			'facebook'      => 'Share_Facebook',
 			'linkedin'      => 'Share_LinkedIn',
 			'reddit'        => 'Share_Reddit',
+			'stumbleupon'   => 'Share_Stumbleupon',
 			'twitter'       => 'Share_Twitter',
 			'press-this'    => 'Share_PressThis',
 			'google-plus-1' => 'Share_GooglePlus1',
@@ -239,7 +240,7 @@ class Sharing_Service {
 
 		// Defaults
 		$options['global'] = array(
-			'button_style'  => 'icon-text',
+			'button_style'  => 'icon',
 			'sharing_label' => $this->default_sharing_label,
 			'open_links'    => 'same',
 			'show'          => array(),
@@ -415,7 +416,7 @@ class Sharing_Service_Total {
 	var $service	= '';
 	var $total 		= 0;
 
-	public function __construct( $id, $total ) {
+	public function Sharing_Service_Total( $id, $total ) {
 		$services 		= new Sharing_Service();
 		$this->id 		= esc_html( $id );
 		$this->service 	= $services->get_service( $id );
@@ -437,7 +438,7 @@ class Sharing_Post_Total {
 	var $title 	= '';
 	var $url	= '';
 
-	public function __construct( $id, $total ) {
+	public function Sharing_Post_Total( $id, $total ) {
 		$this->id 		= (int) $id;
 		$this->total 	= (int) $total;
 		$this->title	= get_the_title( $this->id );
@@ -503,25 +504,10 @@ function sharing_add_footer() {
 		if ( apply_filters( 'jetpack_sharing_counts', true ) && is_array( $jetpack_sharing_counts ) && count( $jetpack_sharing_counts ) ) :
 			$sharing_post_urls = array_filter( $jetpack_sharing_counts );
 			if ( $sharing_post_urls ) :
-
-				/**
-				 * Defines whether a blog is a Jetpack site.
-				 *
-				 * @since 3.6.0
-				 *
-				 * @param bool false    Assumption on whether a blog is a Jetpack site.
-				 * @param int  $blog_id A blog ID to check.
-				 */
-				$is_jetpack = true === apply_filters( 'is_jetpack_site', false, get_current_blog_id() );
-				$site_id = $is_jetpack ? Jetpack_Options::get_option( 'id' ) : get_current_blog_id();
 ?>
 
 	<script type="text/javascript">
-		window.WPCOM_sharing_counts = <?php echo json_encode( array_flip( $sharing_post_urls ) ); ?>;
-		window.WPCOM_jetpack = <?php echo var_export( $is_jetpack, true ); ?>;
-		<?php if ( is_int( $site_id ) ): ?>
-		window.WPCOM_site_ID = <?php echo $site_id ?>;
-		<?php endif; ?>
+		WPCOM_sharing_counts = <?php echo json_encode( array_flip( $sharing_post_urls ) ); ?>
 	</script>
 <?php
 			endif;
@@ -552,8 +538,13 @@ function sharing_add_header() {
 	}
 
 	if ( count( $enabled['all'] ) > 0 && sharing_maybe_enqueue_scripts() ) {
-		wp_enqueue_style( 'sharedaddy', plugin_dir_url( __FILE__ ) .'sharing.css', array(), JETPACK__VERSION );
-		wp_enqueue_style( 'genericons' );
+		// @todo: Remove this opt-out filter in the future
+		if ( ( ! defined( 'IS_WPCOM' ) ) || ( ! IS_WPCOM ) || apply_filters( 'wpl_sharing_2014_1', true ) ) {
+			wp_enqueue_style( 'sharedaddy', plugin_dir_url( __FILE__ ) .'sharing.css', array(), JETPACK__VERSION );
+			wp_enqueue_style( 'genericons' );
+		} else {
+			wp_enqueue_style( 'sharedaddy', plugin_dir_url( __FILE__ ) .'sharing-legacy.css', array(), JETPACK__VERSION );
+		}
 	}
 
 }
@@ -580,7 +571,7 @@ function sharing_display( $text = '', $echo = false ) {
 	if ( empty( $post ) )
 		return $text;
 
-	if ( ( is_preview() || is_admin() ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+	if ( is_preview() || is_admin() ) {
 		return $text;
 	}
 
@@ -644,7 +635,7 @@ function sharing_display( $text = '', $echo = false ) {
 	// Private post?
 	$post_status = get_post_status( $post->ID );
 
-	if ( 'private' === $post_status ) {
+	if ( $post_status == 'private' ) {
 		$show = false;
 	}
 

@@ -99,7 +99,7 @@ class Markdown_Parser {
 	var $escape_chars_re;
 
 
-	function __construct() {
+	function Markdown_Parser() {
 	#
 	# Constructor function. Initialize appropriate member variables.
 	#
@@ -1574,7 +1574,7 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 
 	### Parser Implementation ###
 
-	function __construct() {
+	function MarkdownExtra_Parser() {
 	#
 	# Constructor function. Initialize the parser object.
 	#
@@ -1600,7 +1600,7 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 			"doAbbreviations"    => 70,
 			);
 
-		parent::__construct();
+		parent::Markdown_Parser();
 	}
 
 

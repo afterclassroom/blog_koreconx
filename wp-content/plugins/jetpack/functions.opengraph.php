@@ -81,6 +81,8 @@ function jetpack_og_tags() {
 			$publicize_facebook_user = get_post_meta( $data->ID, '_publicize_facebook_user', true );
 			if ( ! empty( $publicize_facebook_user ) ) {
 				$tags['article:author'] = esc_url( $publicize_facebook_user );
+			} else {
+				$tags['article:author'] = get_author_posts_url( $data->post_author );
 			}
 		}
 	}
@@ -97,18 +99,8 @@ function jetpack_og_tags() {
 
 	$tags['og:site_name'] = get_bloginfo( 'name' );
 
-	// Get image info and build tags
-	if ( ! post_password_required() ) {
-		$image_info       = jetpack_og_get_image( $image_width, $image_height );
-		$tags['og:image'] = $image_info['src'];
-
-		if ( ! empty( $image_info['width'] ) ) {
-			$tags['og:image:width'] = $image_info['width'];
-		}
-		if ( ! empty( $image_info['height'] ) ) {
-			$tags['og:image:height'] = $image_info['height'];
-		}
-	}
+	if ( !post_password_required() )
+		$tags['og:image']     = jetpack_og_get_image( $image_width, $image_height );
 
 	// Facebook whines if you give it an empty title
 	if ( empty( $tags['og:title'] ) )
@@ -176,83 +168,74 @@ function jetpack_og_tags() {
 function jetpack_og_get_image( $width = 200, $height = 200, $max_images = 4 ) { // Facebook requires thumbnails to be a minimum of 200x200
 	$image = '';
 
-	if ( is_singular() && ! is_home() ) {
+	if ( is_singular() && !is_home() ) {
 		global $post;
 		$image = '';
 
 		// Attempt to find something good for this post using our generalized PostImages code
 		if ( class_exists( 'Jetpack_PostImages' ) ) {
 			$post_images = Jetpack_PostImages::get_images( $post->ID, array( 'width' => $width, 'height' => $height ) );
-			if ( $post_images && ! is_wp_error( $post_images ) ) {
+			if ( $post_images && !is_wp_error( $post_images ) ) {
 				$image = array();
 				foreach ( (array) $post_images as $post_image ) {
-					$image['src'] = $post_image['src'];
-					if ( isset( $post_image['src_width'], $post_image['src_height'] ) ) {
-						$image['width']  = $post_image['src_width'];
-						$image['height'] = $post_image['src_height'];
-					}
+					$image[] = $post_image['src'];
 				}
 			}
 		}
 	} else if ( is_author() ) {
 		$author = get_queried_object();
 		if ( function_exists( 'get_avatar_url' ) ) {
-			// Prefer the core function get_avatar_url() if available, WP 4.2+
-			$image['src'] = get_avatar_url( $author->user_email, array( 'size' => $width ) );
+			$avatar = get_avatar_url( $author->user_email, $width );
+
+			if ( ! empty( $avatar ) ) {
+				if ( is_array( $avatar ) )
+					$image = $avatar[0];
+				else
+					$image = $avatar;
+			}
 		}
 		else {
 			$has_filter = has_filter( 'pre_option_show_avatars', '__return_true' );
-			if ( ! $has_filter ) {
+			if ( !$has_filter ) {
 				add_filter( 'pre_option_show_avatars', '__return_true' );
 			}
 			$avatar = get_avatar( $author->user_email, $width );
-			if ( ! $has_filter ) {
+			if ( !$has_filter ) {
 				remove_filter( 'pre_option_show_avatars', '__return_true' );
 			}
 
-			if ( ! empty( $avatar ) && ! is_wp_error( $avatar ) ) {
+			if ( !empty( $avatar ) && !is_wp_error( $avatar ) ) {
 				if ( preg_match( '/src=["\']([^"\']+)["\']/', $avatar, $matches ) );
-					$image['src'] = wp_specialchars_decode( $matches[1], ENT_QUOTES );
+					$image = wp_specialchars_decode( $matches[1], ENT_QUOTES );
 			}
 		}
 	}
 
-	if ( empty( $image ) ) {
+	if ( empty( $image ) )
 		$image = array();
-	} else if ( ! is_array( $image ) ) {
-		$image = array(
-			'src' => $image
-		);
-	}
+	else if ( !is_array( $image ) )
+		$image = array( $image );
 
 	// First fall back, blavatar
 	if ( empty( $image ) && function_exists( 'blavatar_domain' ) ) {
 		$blavatar_domain = blavatar_domain( site_url() );
-		if ( blavatar_exists( $blavatar_domain ) ) {
-			$image['src']    = blavatar_url( $blavatar_domain, 'img', $width, false, true );
-			$image['width']  = $width;
-			$image['height'] = $height;
-		}
+		if ( blavatar_exists( $blavatar_domain ) )
+			$image[] = blavatar_url( $blavatar_domain, 'img', $width );
 	}
 
 	// Second fall back, Site Logo
 	if ( empty( $image ) && ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) ) {
-		$image['src'] = jetpack_get_site_logo( 'url' );
+		$image[] = jetpack_get_site_logo( 'url' );
 	}
 
 	// Third fall back, Site Icon
 	if ( empty( $image ) && ( function_exists( 'jetpack_has_site_icon' ) && jetpack_has_site_icon() ) ) {
-		$image['src'] = jetpack_site_icon_url( null, '512' );
+		$image[] = jetpack_site_icon_url( null, '512' );
 	}
 
-	// Fourth fall back, Core Site Icon. Added in WP 4.3.
-	if ( empty( $image ) && ( function_exists( 'has_site_icon') && has_site_icon() ) ) {
-		$image['src'] = get_site_icon_url( null, '512' );
-	}
-
-	// Finally fall back, blank image
+	// Fourth fall back, blank image
 	if ( empty( $image ) ) {
-		$image['src'] = apply_filters( 'jetpack_open_graph_image_default', 'https://s0.wp.com/i/blank.jpg' );
+		$image[] = apply_filters( 'jetpack_open_graph_image_default', 'https://s0.wp.com/i/blank.jpg' );
 	}
 
 	return $image;
@@ -266,7 +249,7 @@ function jetpack_og_get_image( $width = 200, $height = 200, $max_images = 4 ) { 
 function jetpack_og_get_image_gravatar( $email, $width ) {
 	$image = '';
 	if ( function_exists( 'get_avatar_url' ) ) {
-		$avatar = get_avatar_url( $email, $width );
+		$avatar = get_avatar_url($email, $width);
 		if ( ! empty( $avatar ) ) {
 			if ( is_array( $avatar ) )
 				$image = $avatar[0];

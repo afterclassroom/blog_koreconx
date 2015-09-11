@@ -59,7 +59,7 @@ class WPCOM_JSON_API_Get_Taxonomies_Endpoint extends WPCOM_JSON_API_Endpoint {
 		}
 
 		return array(
-			'found'       => (int) $found,
+			'found'       => $found,
 			'categories'  => $cats_obj
 		);
 	}
@@ -77,7 +77,7 @@ class WPCOM_JSON_API_Get_Taxonomies_Endpoint extends WPCOM_JSON_API_Endpoint {
 		}
 
 		return array(
-			'found' => (int) $found,
+			'found' => $found,
 			'tags'  => $tags_obj
 		);
 	}
