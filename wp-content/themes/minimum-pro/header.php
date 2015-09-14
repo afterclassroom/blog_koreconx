@@ -48,11 +48,11 @@ wp_head(); //* we need this for plugins
 
 genesis_markup( array(
 
-	'html5'   => '<body %s>',
+  'html5'   => '<body %s>',
 
-	'xhtml'   => sprintf( '<body class="%s">', implode( ' ', get_body_class() ) ),
+  'xhtml'   => sprintf( '<body class="%s">', implode( ' ', get_body_class() ) ),
 
-	'context' => 'body',
+  'context' => 'body',
 
 ) );
 
@@ -62,11 +62,11 @@ do_action( 'genesis_before' );
 
 genesis_markup( array(
 
-	'html5'   => '<div %s>',
+  'html5'   => '<div %s>',
 
-	'xhtml'   => '<div id="wrap">',
+  'xhtml'   => '<div id="wrap">',
 
-	'context' => 'site-container',
+  'context' => 'site-container',
 
 ) );
 
@@ -82,11 +82,11 @@ do_action( 'genesis_after_header' );
 
 genesis_markup( array(
 
-	'html5'   => '<div %s>',
+  'html5'   => '<div %s>',
 
-	'xhtml'   => '<div id="inner">',
+  'xhtml'   => '<div id="inner">',
 
-	'context' => 'site-inner',
+  'context' => 'site-inner',
 
 ) );
 
@@ -94,24 +94,24 @@ genesis_structural_wrap( 'site-inner' );
 
 ?>
 
-<div class="wrap">
+<div class="wrap" style="position: absolute;top: -102px;z-index: 999;right:-125px;width: 100%;">
 
 <div class="row header-banner">
 
 <div class="column one-thirds">
 
-        <img src="/wp-content/uploads/2014/10/kore-logo.png" alt="KoreConX Logo">
+       <!--  <img src="/wp-content/uploads/2014/10/kore-logo.png" alt="KoreConX Logo"> -->
 
     </div>
 
 <div class="column two-thirds">
 
-<h2 class="featured-tagline">Eco-System Infrastructure Platform (ESIP)<span>making the pieces fit</span></h2>
+<h2 class="featured-tagline">Eco-System Infrastructure Platform (ESIP)<span style="color:#fff;">making the pieces fit</span></h2>
 
 <p></p></div>
 
 </div></div>
-
+<br><br>
 
 
 <!-- Start of Async HubSpot Analytics Code -->
