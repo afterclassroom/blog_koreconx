@@ -94,7 +94,7 @@ genesis_structural_wrap( 'site-inner' );
 
 ?>
 
-<div class="wrap" style="position: absolute;top: -102px;z-index: 999;right:18px;width: 660px;;">
+<div class="wrap" style="position: absolute;top: -102px;z-index: 999;right:18px;width: 680px;;">
 
 <div class="row header-banner">
 
