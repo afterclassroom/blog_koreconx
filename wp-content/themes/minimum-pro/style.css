@@ -3984,11 +3984,11 @@ border-color: #ffffff transparent transparent transparent;
 
 .footer-widgets .custom-social-media-icons li.site-angellist a:after{
 
-	content:"";
+	content:"\f209";
 
 	width: 40px; height: 40px;
 
-	background-image: url("/wp-content/uploads/2014/11/angeli-list.png");
+	/*background-image: url("/wp-content/uploads/2014/11/angeli-list.png");*/
 
 	display: inline-block;
 
@@ -4004,7 +4004,7 @@ border-color: #ffffff transparent transparent transparent;
 
 .footer-widgets .custom-social-media-icons li.site-angellist:hover a:after{
 
-	background-image: url("/wp-content/uploads/2014/11/angeli-list-active.png");
+	/*background-image: url("/wp-content/uploads/2014/11/angeli-list-active.png");*/
 
 
 
