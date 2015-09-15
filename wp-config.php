@@ -25,6 +25,9 @@ define('JETPACK_IP_ADDRESS_OK', '54.173.188.169');
 
 # Localized Language Stuff
 
+define('WP_DEBUG', true);
+
+
 define( 'WP_CACHE', TRUE );
 
 define( 'WP_DEBUG', TRUE );
