@@ -1,11 +1,11 @@
 <?php
 # Database Configuration
-define( 'DB_NAME', 'wp-koreconx' );
+define( 'DB_NAME', 'wp_koreconx' );
 //define( 'DB_USER', 'koreconx' );
 //define( 'DB_PASSWORD', 'tBybsJLIu5HQxrnwQwOA' );
 define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', '' );
-define( 'DB_HOST', '127.0.0.1' );
+define( 'DB_PASSWORD', 'root' );
+define( 'DB_HOST', 'db' );
 define( 'DB_HOST_SLAVE', '127.0.0.1' );
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', 'utf8_unicode_ci');
@@ -20,11 +20,14 @@ define('AUTH_SALT',        'BYuMU2:UZCkun{hAT/CTaxN[|@5P7Wo%V7|-a5+>Z]wFJhf]+t(v
 define('SECURE_AUTH_SALT', 'u]KO70l]32b`<JWVo_5Xt _TYk8cBO5d!$B9IJeAbf=oE]3D06_+*g^<N_0Vg?5C');
 define('LOGGED_IN_SALT',   '-#1%f$4O+nu{e@/H|OUnspb9%H:Q5.l#a9q<t4L|P1- >h*?*Factlgw.bW!E+8 ');
 define('NONCE_SALT',       'CzMoD5K6|)3e<$P-U8W8:SG}e7{u :.ca`Hv-}k,,fm{#p}*uM~4TTEpiMc9%3Mc');
+define('JETPACK_IP_ADDRESS_OK', '54.173.188.169');
 
 
 # Localized Language Stuff
 
 define( 'WP_CACHE', TRUE );
+
+define( 'WP_DEBUG', TRUE );
 
 define( 'WP_AUTO_UPDATE_CORE', false );
 
@@ -88,18 +91,18 @@ $wpe_no_cdn_uris=array ( );
 
 $wpe_content_regexs=array ( );
 
-$wpe_all_domains=array ( 0 => 'koreconx.dev', 1 => 'www.koreconx.dev', 2 => 'koreconx.wpengine.dev', );
+// $wpe_all_domains=array ( 0 => 'blog.koreconx.com', 1 => 'www.koreconx.dev', 2 => 'koreconx.wpengine.dev', );
 
-$wpe_varnish_servers=array ( 0 => 'pod-42340', );
+//$wpe_varnish_servers=array ( 0 => 'pod-42340', );
 
-$wpe_special_ips=array ( 0 => '45.79.87.252', );
+//$wpe_special_ips=array ( 0 => '45.79.87.252', 1 => '45.79.87.252');
 
 $wpe_ec_servers=array ( );
 
 $wpe_largefs=array ( );
 
 //$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'koreconx.dev', 'zone' => 'jxuge3rx5ugfte1r3baihg7t', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
-$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'koreconx.dev', 'zone' => '', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
+$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'blog.koreconx.com', 'zone' => 'jxuge3rx5ugfte1r3baihg7t', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
 
 $wpe_netdna_domains_secure=array ( );
 
