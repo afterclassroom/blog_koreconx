@@ -24,6 +24,9 @@ define('NONCE_SALT',       'CzMoD5K6|)3e<$P-U8W8:SG}e7{u :.ca`Hv-}k,,fm{#p}*uM~4
 
 # Localized Language Stuff
 
+define('WP_DEBUG', true);
+
+
 define( 'WP_CACHE', TRUE );
 
 define( 'WP_AUTO_UPDATE_CORE', false );
