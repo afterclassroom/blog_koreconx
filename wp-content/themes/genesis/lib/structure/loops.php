@@ -27,7 +27,7 @@ function genesis_do_loop() {
 	if ( is_page_template( 'page_blog.php' ) ) {
 		$include = genesis_get_option( 'blog_cat' );
 		$exclude = genesis_get_option( 'blog_cat_exclude' ) ? explode( ',', str_replace( ' ', '', genesis_get_option( 'blog_cat_exclude' ) ) ) : '';
-		$paged   = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+		$paged   = get_query_var( 'page' ) ? get_query_var( 'page' ) : 1;
 
 		//* Easter Egg
 		$query_args = wp_parse_args(
@@ -266,7 +266,7 @@ function genesis_grid_loop( $args = array() ) {
 	}
 
 	//* What page are we on?
-	$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+	$paged = get_query_var( 'page' ) ? get_query_var( 'page' ) : 1;
 
 	//* Potentially remove features on page 2+
 	if ( ! $args['features_on_all'] && $paged > 1 )
@@ -280,7 +280,7 @@ function genesis_grid_loop( $args = array() ) {
 	remove_action( 'genesis_post_content', 'genesis_do_post_image' );
 	remove_action( 'genesis_post_content', 'genesis_do_post_content' );
 	remove_action( 'genesis_post_content', 'genesis_do_post_content_nav' );
-	
+
 	remove_action( 'genesis_entry_header', 'genesis_do_post_format_image', 4 );
 	remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 	remove_action( 'genesis_entry_content', 'genesis_do_post_content' );

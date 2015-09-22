@@ -31,16 +31,16 @@ function genesis_reset_loops() {
 	add_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 	add_action( 'genesis_entry_header', 'genesis_do_post_title' );
 	add_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-	
+
 	add_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
 	add_action( 'genesis_entry_content', 'genesis_do_post_content' );
 	add_action( 'genesis_entry_content', 'genesis_do_post_content_nav', 12 );
 	add_action( 'genesis_entry_content', 'genesis_do_post_permalink', 14 );
-	
+
 	add_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
 	add_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_close', 15 );
 	add_action( 'genesis_entry_footer', 'genesis_post_meta' );
-	
+
 	add_action( 'genesis_after_entry', 'genesis_do_author_box_single', 8 );
 	add_action( 'genesis_after_entry', 'genesis_get_comments_template' );
 
@@ -246,7 +246,7 @@ function genesis_post_info() {
 	) );
 
 	$output .= apply_filters( 'genesis_post_info', '[post_date] ' . __( 'by', 'genesis' ) . ' [post_author_posts_link] [post_comments] [post_edit]' );;
-	$output .= genesis_html5() ? '</p>' : '</div>';	
+	$output .= genesis_html5() ? '</p>' : '</div>';
 
 	echo $output;
 
@@ -509,13 +509,13 @@ function genesis_author_box( $context = '', $echo = true ) {
 
 		/**
 		 * Author box title filter.
-		 * 
+		 *
 		 * Allows you to filter the title of the author box. $context passed as second parameter to allow for contextual filtering.
 		 *
 		 * @since unknown
-		 * 
+		 *
 		 * @param string $title Assembled Title.
-		 * @param string $context Context. 
+		 * @param string $context Context.
 		 */
 		$title = apply_filters( 'genesis_author_box_title', $title, $context );
 
@@ -541,17 +541,17 @@ function genesis_author_box( $context = '', $echo = true ) {
 
 	/**
 	 * Author box output filter.
-	 * 
+	 *
 	 * Allows you to filter the full output of the author box.
 	 *
 	 * @since unknown
-	 * 
+	 *
 	 * @param string $output Assembled output.
 	 * @param string $context Context.
-	 * @param string $pattern (s)printf pattern. 
-	 * @param string $context Gravatar. 
-	 * @param string $context Title. 
-	 * @param string $context Description. 
+	 * @param string $pattern (s)printf pattern.
+	 * @param string $context Gravatar.
+	 * @param string $context Title.
+	 * @param string $context Description.
 	 */
 	$output = apply_filters( 'genesis_author_box', $output, $context, $pattern, $gravatar, $title, $description );
 
@@ -567,7 +567,7 @@ add_action( 'genesis_after_entry', 'genesis_after_entry_widget_area' );
  * Display after-entry widget area on the genesis_after_entry action hook.
  *
  * @since 2.1.0
- * 
+ *
  * @uses genesis_widget_area() Output widget area.
  */
 function genesis_after_entry_widget_area() {

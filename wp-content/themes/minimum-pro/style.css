@@ -3338,7 +3338,7 @@ Site Footer
 
 .home .sidebar{
 
-	display: none;
+	/*display: none;*/
 
 }
 
@@ -3354,7 +3354,7 @@ Site Footer
 
 .home .content{
 
-	width: 100%;
+	/*width: 100%;*/
 
 }
 
@@ -7571,4 +7571,7 @@ a:hover.page-numbers {
 }
 .site-inner > .wrap{
 	position: relative;
+}
+.pagination li.pagination-next{
+	display: none;
 }

@@ -1,11 +1,11 @@
 <?php
 # Database Configuration
-define( 'DB_NAME', 'wp_koreconx' );
+define( 'DB_NAME', 'wp-koreconx' );
 //define( 'DB_USER', 'koreconx' );
 //define( 'DB_PASSWORD', 'tBybsJLIu5HQxrnwQwOA' );
 define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', 'root' );
-define( 'DB_HOST', 'db' );
+define( 'DB_PASSWORD', '' );
+define( 'DB_HOST', '127.0.0.1' );
 define( 'DB_HOST_SLAVE', '127.0.0.1' );
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', 'utf8_unicode_ci');
