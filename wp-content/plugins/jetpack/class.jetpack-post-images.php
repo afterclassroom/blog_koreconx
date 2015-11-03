@@ -313,9 +313,7 @@ class Jetpack_PostImages {
 
 		$permalink = get_permalink( $post_id );
 
-		if ( function_exists( 'jetpack_has_site_icon' ) && jetpack_has_site_icon() ) {
-			$url = jetpack_site_icon_url( null, $size, $default = false );
-		} elseif ( function_exists( 'blavatar_domain' ) && function_exists( 'blavatar_exists' ) && function_exists( 'blavatar_url' ) ) {
+		if ( function_exists( 'blavatar_domain' ) && function_exists( 'blavatar_exists' ) && function_exists( 'blavatar_url' ) ) {
 			$domain = blavatar_domain( $permalink );
 
 			if ( ! blavatar_exists( $domain ) ) {
@@ -323,6 +321,10 @@ class Jetpack_PostImages {
 			}
 
 			$url = blavatar_url( $domain, 'img', $size );
+		} elseif ( function_exists( 'jetpack_has_site_icon' ) && jetpack_has_site_icon() ) {
+			$url = jetpack_site_icon_url( null, $size, $default = false );
+		} else {
+			return array();
 		}
 
 		return array( array(
@@ -345,8 +347,8 @@ class Jetpack_PostImages {
 		$post = get_post( $post_id );
 		$permalink = get_permalink( $post_id );
 
-		if ( function_exists( 'get_avatar_url' ) ) {
-			$url = get_avatar_url( $post->post_author, $size, $default, true );
+		if ( function_exists( 'wpcom_get_avatar_url' ) ) {
+			$url = wpcom_get_avatar_url( $post->post_author, $size, $default, true );
 			if ( $url && is_array( $url ) ) {
 				$url = $url[0];
 			}
@@ -390,6 +392,14 @@ class Jetpack_PostImages {
 	 */
 	static function get_image( $post_id, $args = array() ) {
 		$image = '';
+
+		/**
+		 * Fires before we find a single good image for a specific post.
+		 *
+		 * @since 2.2.0
+		 *
+		 * @param int $post_id Post ID.
+		 */
 		do_action( 'jetpack_postimages_pre_get_image', $post_id );
 		$media = self::get_images( $post_id, $args );
 
@@ -403,6 +413,13 @@ class Jetpack_PostImages {
 			}
 		}
 
+		/**
+		 * Fires after we find a single good image for a specific post.
+		 *
+		 * @since 2.2.0
+		 *
+		 * @param int $post_id Post ID.
+		 */
 		do_action( 'jetpack_postimages_post_get_image', $post_id );
 
 		return $image;
@@ -419,6 +436,16 @@ class Jetpack_PostImages {
 		// Figure out which image to attach to this post.
 		$media = false;
 
+		/**
+		 * Filters the array of images that would be good for a specific post.
+		 * This filter is applied before options ($args) filter the original array.
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param array $media Array of images that would be good for a specific post.
+		 * @param int $post_id Post ID.
+		 * @param array $args Array of options to get images.
+		 */
 		$media = apply_filters( 'jetpack_images_pre_get_images', $media, $post_id, $args );
 		if ( $media )
 			return $media;
@@ -431,7 +458,7 @@ class Jetpack_PostImages {
 			'avatar_size'         => 96, // Used for both Grav and Blav
 			'gravatar_default'    => false, // Default image to use if we end up with no Gravatar
 
-			'from_thumbnail'      => true, // Use these flags to specifcy which methods to use to find an image
+			'from_thumbnail'      => true, // Use these flags to specify which methods to use to find an image
 			'from_slideshow'      => true,
 			'from_gallery'        => true,
 			'from_attachment'     => true,
@@ -463,6 +490,16 @@ class Jetpack_PostImages {
 				$media = self::from_gravatar( $post_id, $args['avatar_size'], $args['gravatar_default'] );
 		}
 
+		/**
+		 * Filters the array of images that would be good for a specific post.
+		 * This filter is applied after options ($args) filter the original array.
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param array $media Array of images that would be good for a specific post.
+		 * @param int $post_id Post ID.
+		 * @param array $args Array of options to get images.
+		 */
 		return apply_filters( 'jetpack_images_get_images', $media, $post_id, $args );
 	}
 
@@ -485,6 +522,15 @@ class Jetpack_PostImages {
 
 		// See if we should bypass WordPress.com SaaS resizing
 		if ( has_filter( 'jetpack_images_fit_image_url_override' ) ) {
+			/**
+			 * Filters the image URL used after dimensions are set by Photon.
+			 *
+			 * @since 3.3.0
+			 *
+			 * @param string $src Image URL.
+			 * @param int $width Image width.
+			 * @param int $width Image height.
+			 */
 			return apply_filters( 'jetpack_images_fit_image_url_override', $src, $width, $height );
 		}
 

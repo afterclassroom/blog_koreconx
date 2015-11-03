@@ -1,6 +1,6 @@
 <?php
 # Database Configuration
-define( 'DB_NAME', 'wp-koreconx' );
+define( 'DB_NAME', 'wp-koreconx2' );
 //define( 'DB_USER', 'koreconx' );
 //define( 'DB_PASSWORD', 'tBybsJLIu5HQxrnwQwOA' );
 define( 'DB_USER', 'root' );
@@ -20,13 +20,14 @@ define('AUTH_SALT',        'BYuMU2:UZCkun{hAT/CTaxN[|@5P7Wo%V7|-a5+>Z]wFJhf]+t(v
 define('SECURE_AUTH_SALT', 'u]KO70l]32b`<JWVo_5Xt _TYk8cBO5d!$B9IJeAbf=oE]3D06_+*g^<N_0Vg?5C');
 define('LOGGED_IN_SALT',   '-#1%f$4O+nu{e@/H|OUnspb9%H:Q5.l#a9q<t4L|P1- >h*?*Factlgw.bW!E+8 ');
 define('NONCE_SALT',       'CzMoD5K6|)3e<$P-U8W8:SG}e7{u :.ca`Hv-}k,,fm{#p}*uM~4TTEpiMc9%3Mc');
-define('JETPACK_IP_ADDRESS_OK', '54.173.188.169');
+//define('JETPACK_IP_ADDRESS_OK', '54.173.188.169');
 
 
 # Localized Language Stuff
 
 define('WP_DEBUG', true);
 
+//define ('JETPACK_DEV_DEBUG', true);
 
 define( 'WP_CACHE', TRUE );
 
@@ -105,7 +106,7 @@ $wpe_ec_servers=array ( );
 $wpe_largefs=array ( );
 
 //$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'koreconx.dev', 'zone' => 'jxuge3rx5ugfte1r3baihg7t', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
-$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'blog.koreconx.com', 'zone' => 'jxuge3rx5ugfte1r3baihg7t', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
+$wpe_netdna_domains=array ( 0 =>  array ( 'match' => 'blog.pesome1.com', 'zone' => 'jxuge3rx5ugfte1r3baihg7t', 'secure' => false, 'dns_check' => '0', ), 1 =>  array ( 'match' => 'koreconx.wpengine.dev', 'zone' => '2vf7aelh7464f4a02u8ohd54', 'secure' => false, 'dns_check' => '0', ), );
 
 $wpe_netdna_domains_secure=array ( );
 
@@ -124,7 +125,13 @@ define('WPLANG','');
 # WP Engine Settings
 
 
-
+#fix https domain
+/*define('FORCE_SSL_ADMIN', true);
+define('FORCE_SSL_LOGIN', true);
+if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+    $_SERVER['HTTPS'] = 'on';
+    $_SERVER['SERVER_PORT'] = 443;
+}*/
 
 
 

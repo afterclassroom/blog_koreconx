@@ -94,7 +94,7 @@ genesis_structural_wrap( 'site-inner' );
 
 ?>
 
-<div class="wrap" style="position: absolute;top: -102px;z-index: 999;right:18px;width: 680px;;">
+<div class="wrap" style="position: absolute;top: -102px;z-index: 999;right:0;width: 60%;">
 
 <div class="row header-banner">
 
@@ -104,7 +104,7 @@ genesis_structural_wrap( 'site-inner' );
 
     </div>
 
-<div class="column two-thirds">
+<div class="column two-thirds"  style="width: 100%;">
 
 <h2 class="featured-tagline">Eco-System Infrastructure Platform (ESIP)<span style="color:#fff;">making the pieces fit</span></h2>
 

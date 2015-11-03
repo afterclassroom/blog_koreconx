@@ -47,7 +47,7 @@ function AtD_http_post( $request, $host, $path, $port = 80 ) {
 		do_action( 'atd_http_post_error', 'http-error' );
 		return array();
 	} elseif ( 200 != $code ) {
-		/** This action is documented in modules/after-the-deadline/proxy.php */ 
+		/** This action is documented in modules/after-the-deadline/proxy.php */
 		do_action( 'atd_http_post_error', $code );
 	}
 
@@ -78,10 +78,11 @@ function AtD_redirect_call() {
 
 	$user = wp_get_current_user();
 
-	if ( defined( 'IS_WPCOM' ) && IS_WPCOM ) {
+	$atd_lang = get_locale();
+
+	// If we're on WPCOM, this function should be available.
+	if ( function_exists( 'get_user_lang_code' ) ) {
 		$atd_lang = get_user_lang_code( $user->ID );
-	} else {
-		$atd_lang = WPLANG;
 	}
 
 	if ( ! empty( $atd_lang ) ) {

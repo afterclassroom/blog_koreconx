@@ -280,6 +280,13 @@ class Publicize extends Publicize_Base {
 	*/
 	// on WordPress.com this is/calls Keyring::admin_url
 	function api_url( $service = false, $params = array() ) {
+		/**
+		 * Filters the API URL used to interact with WordPress.com.
+		 *
+		 * @since 2.0.0
+		 *
+		 * @param string https://public-api.wordpress.com/connect/?jetpack=publicize Default Publicize API URL.
+		 */
 		$url = apply_filters( 'publicize_api_url', 'https://public-api.wordpress.com/connect/?jetpack=publicize' );
 
 		if ( $service )
@@ -723,7 +730,11 @@ class Publicize extends Publicize_Base {
 		if ( 'facebook' == $service_name && isset( $connection_meta['connection_data']['meta']['facebook_profile'] ) && $submit_post ) {
 			$publicize_facebook_user = get_post_meta( $post_id, '_publicize_facebook_user' );
 			if ( empty( $publicize_facebook_user ) || 0 != $connection_meta['connection_data']['user_id'] ) {
-				update_post_meta( $post_id, '_publicize_facebook_user', $this->get_profile_link( 'facebook', $connection ) );
+				$profile_link = $this->get_profile_link( 'facebook', $connection );
+
+				if ( false !== $profile_link ) {
+					update_post_meta( $post_id, '_publicize_facebook_user', $profile_link );
+				}
 			}
 		}
 	}
